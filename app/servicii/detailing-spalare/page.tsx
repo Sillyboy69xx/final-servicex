@@ -4,9 +4,8 @@ import { ServiceCta } from '@/components/service/service-cta'
 import { RelatedServices } from '@/components/service/related-services'
 import { ServiceTabs } from '@/components/service/service-tabs'
 import { BeforeAfterSlider } from '@/components/service/before-after-slider'
-import { ServicePhotoStrip } from '@/components/service/service-photo-strip'
 import { ScrollReveal } from '@/components/scroll-reveal'
-import { images, serviceHeroImages, servicePhotoStrips } from '@/lib/media'
+import { images, serviceHeroImages } from '@/lib/media'
 
 export const metadata = {
   title: 'Detailing & Spălare — Recondiționare Auto Premium',
@@ -194,13 +193,6 @@ export default function DetailingPage() {
           </div>
         </div>
       </section>
-
-      {(servicePhotoStrips['detailing-spalare']?.length ?? 0) > 0 && (
-        <ServicePhotoStrip
-          images={servicePhotoStrips['detailing-spalare']!}
-          altPrefix="Detailing"
-        />
-      )}
 
       <ServiceCta />
       <RelatedServices exclude="detailing-spalare" />

@@ -3,8 +3,7 @@ import { ServiceHero } from '@/components/service/service-hero'
 import { ServiceAccordion, type AccordionItem } from '@/components/service/service-accordion'
 import { ServiceCta } from '@/components/service/service-cta'
 import { RelatedServices } from '@/components/service/related-services'
-import { ServicePhotoStrip } from '@/components/service/service-photo-strip'
-import { serviceHeroImages, servicePhotoStrips } from '@/lib/media'
+import { serviceHeroImages } from '@/lib/media'
 import type { ServiceSlug } from '@/lib/site'
 
 interface SimpleServicePageProps {
@@ -16,7 +15,6 @@ interface SimpleServicePageProps {
   imageLabel?: string
   subServices: AccordionItem[]
   breadcrumbLabel: string
-  showPhotoStrip?: boolean
 }
 
 export function SimpleServicePage({
@@ -28,10 +26,8 @@ export function SimpleServicePage({
   imageLabel,
   subServices,
   breadcrumbLabel,
-  showPhotoStrip = true,
 }: SimpleServicePageProps) {
   const heroSrc = imageSrc ?? serviceHeroImages[slug]
-  const strip = servicePhotoStrips[slug]
 
   return (
     <>
@@ -57,9 +53,6 @@ export function SimpleServicePage({
         </h2>
         <ServiceAccordion items={subServices} />
       </section>
-      {showPhotoStrip && strip && strip.length > 0 && (
-        <ServicePhotoStrip images={strip} altPrefix={breadcrumbLabel} />
-      )}
       <ServiceCta />
       <RelatedServices exclude={slug} />
     </>

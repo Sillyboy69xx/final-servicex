@@ -1,44 +1,44 @@
-'use client'
+"use client";
 
-import { useEffect, useRef } from 'react'
-import Image from 'next/image'
-import { gsap, Draggable, registerGsap } from '@/lib/gsap'
-import { SplitHeading } from '@/components/split-heading'
-import { overlandingShowcaseItems } from '@/lib/media'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { gsap, Draggable, registerGsap } from "@/lib/gsap";
+import { SplitHeading } from "@/components/split-heading";
+import { overlandingShowcaseItems } from "@/lib/media";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export function OverlandingShowcase() {
-  const trackRef = useRef<HTMLDivElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const trackRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    registerGsap()
-    const track = trackRef.current
-    const container = containerRef.current
-    if (!track || !container) return
+    registerGsap();
+    const track = trackRef.current;
+    const container = containerRef.current;
+    if (!track || !container) return;
 
-    let draggable: Draggable[] = []
+    let draggable: Draggable[] = [];
     const setup = () => {
-      const max = -(track.scrollWidth - container.offsetWidth)
-      draggable.forEach((d) => d.kill())
+      const max = -(track.scrollWidth - container.offsetWidth);
+      draggable.forEach((d) => d.kill());
       draggable = Draggable.create(track, {
-        type: 'x',
+        type: "x",
         bounds: { minX: max, maxX: 0 },
         inertia: false,
         edgeResistance: 0.85,
         dragResistance: 0.05,
-        cursor: 'grab',
-        activeCursor: 'grabbing',
-      })
-    }
-    setup()
-    window.addEventListener('resize', setup)
+        cursor: "grab",
+        activeCursor: "grabbing",
+      });
+    };
+    setup();
+    window.addEventListener("resize", setup);
     return () => {
-      window.removeEventListener('resize', setup)
-      draggable.forEach((d) => d.kill())
-    }
-  }, [])
+      window.removeEventListener("resize", setup);
+      draggable.forEach((d) => d.kill());
+    };
+  }, []);
 
   const slide = (item: (typeof overlandingShowcaseItems)[number]) => (
     <>
@@ -55,19 +55,19 @@ export function OverlandingShowcase() {
         — {item.caption}
       </p>
     </>
-  )
+  );
 
   return (
     <section className="py-16 md:py-28 bg-bg-secondary border-y border-border-dark/10 overflow-hidden">
       <div className="container-x mb-10 md:mb-14">
-        <p className="font-accent text-xl text-accent-primary mb-2">— overlanding</p>
         <SplitHeading
-          text={'UMBRELĂ TELESCOPICĂ.\nDULAPURI CUSTOM.\nSOLUȚII PE CARE NU LE GĂSEȘTI.'}
+          text={"OVERLANDING"}
           as="h2"
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-wider max-w-5xl"
         />
         <p className="mt-6 md:mt-8 text-base md:text-lg text-text-muted max-w-2xl leading-relaxed">
-          De la consultanță la implementare. Modificări gândite pentru drumurile lungi, pentru terenul greu și pentru bagajul real al unei expediții.
+          De la consultanță la implementare. Modificări gândite pentru drumurile
+          lungi, pentru terenul greu și pentru bagajul real al unei expediții.
         </p>
       </div>
 
@@ -84,7 +84,7 @@ export function OverlandingShowcase() {
           <div
             ref={trackRef}
             className="flex gap-6 select-none"
-            style={{ willChange: 'transform' }}
+            style={{ willChange: "transform" }}
           >
             {overlandingShowcaseItems.map((item) => (
               <div key={item.src} className="shrink-0 w-[420px]">
@@ -105,5 +105,5 @@ export function OverlandingShowcase() {
         </Link>
       </div>
     </section>
-  )
+  );
 }

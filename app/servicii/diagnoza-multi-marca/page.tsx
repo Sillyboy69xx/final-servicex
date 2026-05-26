@@ -2,9 +2,8 @@ import { Breadcrumb } from '@/components/breadcrumb'
 import { ServiceHero } from '@/components/service/service-hero'
 import { ServiceCta } from '@/components/service/service-cta'
 import { RelatedServices } from '@/components/service/related-services'
-import { ServicePhotoStrip } from '@/components/service/service-photo-strip'
 import { ScrollReveal } from '@/components/scroll-reveal'
-import { serviceHeroImages, servicePhotoStrips } from '@/lib/media'
+import { serviceHeroImages } from '@/lib/media'
 
 export const metadata = {
   title: 'Diagnoză Multi-Marcă — Service Auto',
@@ -13,8 +12,6 @@ export const metadata = {
 }
 
 export default function Page() {
-  const strip = servicePhotoStrips['diagnoza-multi-marca'] ?? []
-
   return (
     <>
       <Breadcrumb
@@ -79,10 +76,6 @@ export default function Page() {
           </ScrollReveal>
         </div>
       </section>
-
-      {strip.length > 0 && (
-        <ServicePhotoStrip images={strip} altPrefix="Diagnoză atelier" />
-      )}
 
       <ServiceCta />
       <RelatedServices exclude="diagnoza-multi-marca" />

@@ -3,7 +3,6 @@ import { ServiceHero } from '@/components/service/service-hero'
 import { ServiceAccordion } from '@/components/service/service-accordion'
 import { ServiceCta } from '@/components/service/service-cta'
 import { RelatedServices } from '@/components/service/related-services'
-import { OverlandingCarousel } from '@/components/service/overlanding-carousel'
 import { ProcessSection } from '@/components/service/process-section'
 import { ScrollReveal } from '@/components/scroll-reveal'
 import { serviceHeroImages } from '@/lib/media'
@@ -70,8 +69,6 @@ export default function OverlandingPage() {
           </ScrollReveal>
         </div>
       </section>
-
-      <OverlandingCarousel />
 
       <section className="container-x py-16 md:py-24">
         <p className="font-accent text-xl text-accent-primary mb-2">— sub-servicii</p>

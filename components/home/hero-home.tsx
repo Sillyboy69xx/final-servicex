@@ -78,9 +78,7 @@ export function HeroHome() {
         rpmObj = { v: 0 };
         const updateRpm = () => {
           if (!rpmEl.isConnected || !rpmObj) return;
-          rpmEl.textContent = Math.floor(rpmObj.v)
-            .toString()
-            .padStart(4, "0");
+          rpmEl.textContent = Math.floor(rpmObj.v).toString().padStart(4, "0");
         };
         rpmTweens.push(
           gsap.to(rpmObj, {
@@ -121,7 +119,7 @@ export function HeroHome() {
 
       // GPS coord scramble
       if (coordsRef.current) {
-        const target = "44.4267°N · 26.1025°E";
+        const target = " ";
         const el = coordsRef.current;
         const state = { v: 0 };
         gsap.to(state, {
@@ -366,42 +364,13 @@ export function HeroHome() {
                 className="font-mono text-[8px] md:text-[9px] tracking-[0.28em] mt-1 uppercase flex"
                 style={{ color: BRAND_RED }}
               >
-                {"SERVICE".split("").map((c, i) => (
+                {"Atelier Auto".split("").map((c, i) => (
                   <span key={i} data-wm>
                     {c}
                   </span>
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* RPM STATUS — top-right */}
-          <div
-            ref={statusRef}
-            className="absolute top-2.5 right-2.5 md:top-4 md:right-4 z-10 text-right"
-          >
-            <div className="flex items-center justify-end gap-1.5 font-mono text-[9px] md:text-[10px] tracking-[0.2em] text-text-muted uppercase">
-              <span
-                className="hero-pulse inline-block w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: BRAND_RED }}
-              />
-              <span>
-                Idle ·{" "}
-                <span ref={rpmRef} className="text-text-primary">
-                  0820
-                </span>{" "}
-                rpm
-              </span>
-            </div>
-            <div className="font-mono text-[8px] md:text-[9px] tracking-[0.25em] text-text-primary mt-1 uppercase">
-              Sys · Nominal
-            </div>
-          </div>
-
-          {/* Bottom-right label */}
-          <div className="absolute bottom-2.5 right-2.5 md:bottom-4 md:right-4 font-mono text-[9px] md:text-[10px] tracking-[0.2em] text-text-muted z-10 text-right uppercase">
-            <div>Exp/4WD/HC</div>
-            <div className="text-text-primary mt-1">Rec: RTT</div>
           </div>
 
           {/* SVG SCENE */}
@@ -889,8 +858,7 @@ export function HeroHome() {
               </span>
             </h1>
             <p className="mt-5 md:mt-8 text-sm md:text-base text-text-muted max-w-md leading-relaxed">
-              Service complet. Specializare overlanding & off-road. Lucrăm cu
-              mașinile clienților noștri pe termen lung.
+              Service complet. Specializare overlanding & off-road.
             </p>
           </div>
 
@@ -916,15 +884,6 @@ export function HeroHome() {
               >
                 GALERIE BUILDS
               </Link>
-            </div>
-
-            <div
-              ref={statsRef}
-              className="grid grid-cols-3 gap-3 md:gap-6 border-t border-border-dark/30 pt-5"
-            >
-              <Stat value="12+" label="ani / service" />
-              <Stat value="180+" label="build-uri" />
-              <Stat value="∞" label="km de teren" />
             </div>
           </div>
         </div>

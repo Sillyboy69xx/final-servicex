@@ -57,8 +57,8 @@ export const serviceHeroImages: Record<ServiceSlug, string> = {
   "overlanding-offroad": images.overlanding[0],
   "detailing-spalare": publicImage("detailing-3-after.jpeg"),
   "revizii-mentenanta": publicImage("1.jpeg"),
-  "aer-conditionat": publicImage("20.jpeg"),
-  "diagnoza-multi-marca": images.heroDefault,
+  "aer-conditionat": publicImage("incarcare_freon.jpg"),
+  "diagnoza-multi-marca": publicImage("diagnoza-auto.webp"),
   "reparatii-esapament": publicImage("13.jpeg"),
   "sudura-argon-co2": publicImage("6.jpeg"),
   consultanta: publicImage("17.jpeg"),
@@ -70,8 +70,8 @@ export const serviceCardImages: Record<ServiceSlug, string> = {
   "overlanding-offroad": images.overlanding[0],
   "detailing-spalare": publicImage("detailing-3-after.jpeg"),
   "revizii-mentenanta": publicImage("2.jpeg"),
-  "aer-conditionat": publicImage("20.jpeg"),
-  "diagnoza-multi-marca": publicImage("11.jpeg"),
+  "aer-conditionat": publicImage("incarcare_freon.jpg"),
+  "diagnoza-multi-marca": publicImage("diagnoza-auto.webp"),
   "reparatii-esapament": publicImage("14.jpeg"),
   "sudura-argon-co2": publicImage("7.jpeg"),
   consultanta: publicImage("19.jpeg"),
@@ -87,44 +87,28 @@ export const servicePhotoStrips: Partial<Record<ServiceSlug, string[]>> = {
     ...images.workshopLift,
   ],
   "diagnoza-multi-marca": [
-    publicImage("4.jpeg"),
+    publicImage("diagnoza-auto.webp"),
     publicImage("5.jpeg"),
     ...images.workshopLift,
   ],
   "sudura-argon-co2": [publicImage("6.jpeg"), publicImage("7.jpeg")],
   "reparatii-esapament": [publicImage("13.jpeg"), publicImage("14.jpeg")],
   consultanta: [publicImage("17.jpeg"), publicImage("19.jpeg")],
-  "aer-conditionat": [publicImage("20.jpeg")],
+  "aer-conditionat": [publicImage("incarcare_freon.jpg")],
   "sablare-antifonare": [...images.sablareAntifonare],
   "detailing-spalare": [publicImage("15.jpeg"), publicImage("23.jpeg")],
 };
 
 export const galleryItems = images.overlanding.map((src, i) => ({
   src,
-  caption: [
-    "Defender — saharian + roof rack",
-    "Hilux — sertare aluminiu",
-    "Land Cruiser — snorkel",
-    "Patrol — protecții punte",
-    "Discovery — iluminat auxiliar",
-    "Wrangler — suspensie ridicată",
-    "Amarok — compartimentare",
-  ][i],
+  caption: [" ", " ", " ", " ", " ", " ", " "][i],
   ratio: (["3/4", "4/3", "1/1", "4/3", "3/4", "1/1", "4/3"] as const)[i],
 }));
 
 export const overlandingCarouselItems = [
   ...images.overlanding.map((src, i) => ({
     src,
-    caption: [
-      "Roof rack — pregătit pentru saharian",
-      "Suspensie ridicată",
-      "Dulapuri sertare aluminiu",
-      "Snorkel + carter",
-      "Iluminat auxiliar dedicat",
-      "Umbrelă telescopică",
-      "Compartimentare interior",
-    ][i],
+    caption: [" ", " ", " ", " ", " ", " ", " "][i],
   })),
   ...images.overlandingExtra.map((src, i) => ({
     src,
@@ -138,13 +122,5 @@ export const overlandingCarouselItems = [
 
 export const overlandingShowcaseItems = images.overlanding.map((src, i) => ({
   src,
-  caption: [
-    "Roof rack custom — saharian",
-    "Dulapuri sertare aluminiu",
-    "Umbrelă telescopică",
-    "Snorkel + protecție carter",
-    "Iluminat auxiliar",
-    "Suspensie ridicată",
-    "Compartimentare interior",
-  ][i],
+  caption: [" ", " ", " ", " ", " ", " ", " "][i],
 }));
