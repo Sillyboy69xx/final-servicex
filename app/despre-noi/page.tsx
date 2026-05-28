@@ -1,44 +1,41 @@
-import { Breadcrumb } from '@/components/breadcrumb'
-import { SplitHeading } from '@/components/split-heading'
-import { OptimizedImage } from '@/components/optimized-image'
-import { images } from '@/lib/media'
-import { ScrollReveal } from '@/components/scroll-reveal'
-import { ContactStrip } from '@/components/home/contact-strip'
-import { Wrench, Compass, Handshake } from 'lucide-react'
+import { Breadcrumb } from "@/components/breadcrumb";
+import { SplitHeading } from "@/components/split-heading";
+import { OptimizedImage } from "@/components/optimized-image";
+import { images } from "@/lib/media";
+import { ScrollReveal } from "@/components/scroll-reveal";
+import { ContactStrip } from "@/components/home/contact-strip";
+import { Wrench, Compass, Handshake } from "lucide-react";
 
 export const metadata = {
-  title: 'Despre noi — Service Auto Premium București',
+  title: "Despre noi — Service Auto Premium București",
   description:
-    'Echipă cu experiență, atenție la detaliu și o abordare personală pentru fiecare mașină.',
-}
+    "Echipă cu experiență, atenție la detaliu și o abordare personală pentru fiecare mașină.",
+};
 
 const values = [
   {
     icon: Wrench,
-    title: 'Lucrat manual',
-    text: 'Fiecare reparație trece prin mâinile cuiva care o cunoaște. Fără linii de asamblare, fără reparații rapide.',
+    title: "Lucrat manual",
+    text: "Fiecare reparație trece prin mâinile cuiva care o cunoaște. Fără linii de asamblare, fără reparații rapide.",
   },
   {
     icon: Compass,
-    title: 'Atenție la detaliu',
-    text: 'Cordonul de sudură. Cuplul corect. Reglajul final. Lucrurile mici fac diferența.',
+    title: "Atenție la detaliu",
+    text: "Cordonul de sudură. Cuplul corect. Reglajul final. Lucrurile mici fac diferența.",
   },
-  {
-    icon: Handshake,
-    title: 'Pe termen lung',
-    text: 'Lucrăm cu mașinile clienților noștri ani la rând. Le cunoaștem.',
-  },
-]
+];
 
 export default function Page() {
   return (
     <>
-      <Breadcrumb items={[{ label: 'Acasă', href: '/' }, { label: 'Despre' }]} />
+      <Breadcrumb
+        items={[{ label: "Acasă", href: "/" }, { label: "Despre" }]}
+      />
 
       <section className="container-x pt-6 md:pt-10 pb-12 md:pb-20">
         <p className="font-accent text-xl text-accent-primary mb-2">— echipa</p>
         <SplitHeading
-          text={'DESPRE\nNOI'}
+          text={"DESPRE\nNOI"}
           as="h1"
           className="text-7xl sm:text-8xl md:text-[12rem] tracking-wider mb-8 md:mb-12"
         />
@@ -46,17 +43,24 @@ export default function Page() {
           <div className="md:col-span-7 space-y-5 text-text-muted">
             <ScrollReveal>
               <p className="text-lg md:text-xl text-text-primary leading-relaxed">
-                Suntem un service mic, dedicat. Lucrăm cu mașinile clienților noștri pe termen lung — unele de mulți ani.
+                Suntem un service mic, dedicat. Lucrăm cu mașinile clienților
+                noștri pe termen lung — unele de mulți ani.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="leading-relaxed">
-                Pasiunea noastră e overlanding-ul și off-road-ul, dar nu refuzăm lucrări care țin de bazele unei mașini sănătoase: revizii, suspensie, A/C, diagnoză, sudură, eșapament. Fiecare are atenția cuvenită.
+                Pasiunea noastră e overlanding-ul și off-road-ul, dar nu refuzăm
+                lucrări care țin de bazele unei mașini sănătoase: revizii,
+                suspensie, A/C, diagnoză, sudură, eșapament. Fiecare are atenția
+                cuvenită.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="leading-relaxed">
-                Ne alegem proiectele cu grijă. Nu pentru că ne facem mofturi, ci pentru că vrem să facem fiecare lucrare cum trebuie. Fiecare proiect este personal — și asta înseamnă timp, atenție, conversație înainte de chei.
+                Ne alegem proiectele cu grijă. Nu pentru că ne facem mofturi, ci
+                pentru că vrem să facem fiecare lucrare cum trebuie. Fiecare
+                proiect este personal — și asta înseamnă timp, atenție,
+                conversație înainte de chei.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
@@ -80,7 +84,9 @@ export default function Page() {
 
       <section className="bg-bg-secondary border-y border-border-dark/10 py-16 md:py-24">
         <div className="container-x">
-          <p className="font-accent text-xl text-accent-primary mb-2">— valori</p>
+          <p className="font-accent text-xl text-accent-primary mb-2">
+            — valori
+          </p>
           <h2 className="font-heading text-4xl md:text-7xl tracking-wider mb-10 md:mb-14">
             Cum gândim
           </h2>
@@ -104,5 +110,5 @@ export default function Page() {
 
       <ContactStrip />
     </>
-  )
+  );
 }

@@ -21,9 +21,9 @@ export const services = [
     short: "Recondiționare interioară, corecție lac, protecție ceramică.",
   },
   {
-    slug: "revizii-mentenanta",
-    title: "Revizii & Mentenanță",
-    short: "Operațiuni programate, suspensie, distribuție, ambreiaj.",
+    slug: "sablare-antifonare",
+    title: "Sablare & Antifonare",
+    short: "Sablare eșapament, antifonare și pregătire pentru vopsire.",
   },
   {
     slug: "aer-conditionat",
@@ -38,17 +38,7 @@ export const services = [
   {
     slug: "reparatii-esapament",
     title: "Reparații Eșapament",
-    short: "Tobe, racorduri, catalizatoare, sudură argon.",
-  },
-  {
-    slug: "sablare-antifonare",
-    title: "Sablare & Antifonare",
-    short: "Sablare eșapament, antifonare și pregătire pentru vopsire.",
-  },
-  {
-    slug: "sudura-argon-co2",
-    title: "Sudură Argon & CO₂",
-    short: "Aluminiu, inox, aliaje speciale.",
+    short: "Tobe, racorduri, catalizatoare.",
   },
   {
     slug: "consultanta",

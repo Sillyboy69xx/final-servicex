@@ -56,13 +56,14 @@ export const images = {
 export const serviceHeroImages: Record<ServiceSlug, string> = {
   "overlanding-offroad": images.overlanding[0],
   "detailing-spalare": publicImage("detailing-3-after.jpeg"),
+  "sablare-antifonare": publicImage("sablare.jpeg"),
   "revizii-mentenanta": publicImage("1.jpeg"),
   "aer-conditionat": publicImage("incarcare_freon.jpg"),
+
   "diagnoza-multi-marca": publicImage("diagnoza-auto.webp"),
-  "reparatii-esapament": publicImage("13.jpeg"),
-  "sudura-argon-co2": publicImage("6.jpeg"),
+  "reparatii-esapament": publicImage("esapament.webp"),
+
   consultanta: publicImage("17.jpeg"),
-  "sablare-antifonare": images.sablareAntifonare[0],
 };
 
 /** Thumbnail for cards on /servicii and featured services */
@@ -70,12 +71,12 @@ export const serviceCardImages: Record<ServiceSlug, string> = {
   "overlanding-offroad": images.overlanding[0],
   "detailing-spalare": publicImage("detailing-3-after.jpeg"),
   "revizii-mentenanta": publicImage("2.jpeg"),
+  "sablare-antifonare": images.sablareAntifonare[1],
   "aer-conditionat": publicImage("incarcare_freon.jpg"),
   "diagnoza-multi-marca": publicImage("diagnoza-auto.webp"),
   "reparatii-esapament": publicImage("14.jpeg"),
-  "sudura-argon-co2": publicImage("7.jpeg"),
+
   consultanta: publicImage("19.jpeg"),
-  "sablare-antifonare": images.sablareAntifonare[1],
 };
 
 /** Horizontal photo strips on service detail pages */
@@ -91,7 +92,7 @@ export const servicePhotoStrips: Partial<Record<ServiceSlug, string[]>> = {
     publicImage("5.jpeg"),
     ...images.workshopLift,
   ],
-  "sudura-argon-co2": [publicImage("6.jpeg"), publicImage("7.jpeg")],
+
   "reparatii-esapament": [publicImage("13.jpeg"), publicImage("14.jpeg")],
   consultanta: [publicImage("17.jpeg"), publicImage("19.jpeg")],
   "aer-conditionat": [publicImage("incarcare_freon.jpg")],
@@ -99,11 +100,19 @@ export const servicePhotoStrips: Partial<Record<ServiceSlug, string[]>> = {
   "detailing-spalare": [publicImage("15.jpeg"), publicImage("23.jpeg")],
 };
 
-export const galleryItems = images.overlanding.map((src, i) => ({
+const galleryOverlandingItems = images.overlanding.map((src, i) => ({
   src,
-  caption: [" ", " ", " ", " ", " ", " ", " "][i],
+  caption: `Overlanding build ${i + 1}`,
   ratio: (["3/4", "4/3", "1/1", "4/3", "3/4", "1/1", "4/3"] as const)[i],
 }));
+
+const galleryWorkshopItems = Array.from({ length: 24 }, (_, i) => ({
+  src: publicImage(`${i + 1}.jpeg`),
+  caption: `Galerie service ${i + 1}`,
+  ratio: (["4/3", "1/1", "3/4"] as const)[i % 3],
+}));
+
+export const galleryItems = [...galleryOverlandingItems, ...galleryWorkshopItems];
 
 export const overlandingCarouselItems = [
   ...images.overlanding.map((src, i) => ({

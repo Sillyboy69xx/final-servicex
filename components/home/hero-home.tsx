@@ -364,11 +364,7 @@ export function HeroHome() {
                 className="font-mono text-[8px] md:text-[9px] tracking-[0.28em] mt-1 uppercase flex"
                 style={{ color: BRAND_RED }}
               >
-                {"Atelier Auto".split("").map((c, i) => (
-                  <span key={i} data-wm>
-                    {c}
-                  </span>
-                ))}
+                Atelier Auto
               </div>
             </div>
           </div>
