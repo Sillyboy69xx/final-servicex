@@ -52,11 +52,17 @@ export const images = {
   ],
 } as const;
 
+/** Dual images for the Sablare & Antifonare service page */
+export const sablareServiceImages = {
+  sablare: publicImage("sablare.jpeg"),
+  antifonare: publicImage("sablare72.jpeg"),
+} as const;
+
 /** Hero image per service page */
 export const serviceHeroImages: Record<ServiceSlug, string> = {
   "overlanding-offroad": images.overlanding[0],
   "detailing-spalare": publicImage("detailing-3-after.jpeg"),
-  "sablare-antifonare": publicImage("sablare.jpeg"),
+  "sablare-antifonare": sablareServiceImages.sablare,
   "revizii-mentenanta": publicImage("1.jpeg"),
   "aer-conditionat": publicImage("incarcare_freon.jpg"),
 
@@ -132,4 +138,39 @@ export const overlandingCarouselItems = [
 export const overlandingShowcaseItems = images.overlanding.map((src, i) => ({
   src,
   caption: [" ", " ", " ", " ", " ", " ", " "][i],
+}));
+
+/**
+ * Full gallery for the Overlanding & Off-Road service page.
+ * Prefer landrover-outside-service.jpeg; fall back to the legacy typo filename.
+ */
+export const overlandingPageGallery = [
+  "17.jpeg",
+  "ov2.jpeg",
+  "1.jpeg",
+  "2.jpeg",
+  "6.jpeg",
+  "7.jpeg",
+  "10.jpeg",
+  "11.jpeg",
+  "12.jpeg",
+  "14.jpeg",
+  "20.jpeg",
+  "21.jpeg",
+  "23.jpeg",
+  "landrover-outside-service.jpeg",
+  "ov1.jpeg",
+  "ov3.jpeg",
+  "ov4.jpeg",
+  "ov5.jpeg",
+  "ov6.jpeg",
+  "ov7.jpeg",
+].map((file, i) => ({
+  src: publicImage(file),
+  /** Legacy typo filename kept as fallback when the corrected file is missing */
+  fallbackSrc:
+    file === "landrover-outside-service.jpeg"
+      ? publicImage("landrover-outisde-service.jpeg")
+      : undefined,
+  alt: `Overlanding & off-road — proiect ${i + 1}`,
 }));

@@ -1,11 +1,11 @@
 import { Breadcrumb } from "@/components/breadcrumb";
-import { ServiceHero } from "@/components/service/service-hero";
+import { SplitHeading } from "@/components/split-heading";
 import { ServiceAccordion } from "@/components/service/service-accordion";
 import { ServiceCta } from "@/components/service/service-cta";
 import { RelatedServices } from "@/components/service/related-services";
 import { ProcessSection } from "@/components/service/process-section";
 import { ScrollReveal } from "@/components/scroll-reveal";
-import { serviceHeroImages } from "@/lib/media";
+import { OverlandingGalleryCarousel } from "@/components/service/overlanding-gallery-carousel";
 
 export const metadata = {
   title: "Overlanding & Off-Road — Pregătiri Complete | Service Auto",
@@ -24,24 +24,28 @@ export default function OverlandingPage() {
         ]}
       />
 
-      <ServiceHero
-        eyebrow="— flagship"
-        title={"OVERLANDING\n& OFF-ROAD"}
-        imageSrc={serviceHeroImages["overlanding-offroad"]}
-        imageAlt="Build overlanding — pregătire off-road"
-        ratio="21/9"
-      />
+      {/* Flagship hero — oversized title like the sablare page treatment */}
+      <section className="container-x pt-6 md:pt-10 pb-10 md:pb-16">
+        <p className="font-accent text-xl text-accent-primary mb-2">
+          — flagship
+        </p>
+        <SplitHeading
+          text={"OVERLANDING\n& OFF-ROAD"}
+          as="h1"
+          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-wider mb-6 md:mb-8"
+        />
+        <p className="max-w-3xl text-base md:text-xl text-text-muted leading-relaxed">
+          Peste 10 ani de experiență în pregătirea mașinilor pentru drumurile
+          care nu apar pe hartă. Lucrăm de la consultanță până la implementare
+          — și rămânem în contact mult timp după ce mașina iese din service.
+        </p>
+      </section>
 
-      <section className="container-x pb-12 md:pb-20">
+      {/* Intro + differentiators */}
+      <section className="container-x pb-12 md:pb-16">
         <div className="grid md:grid-cols-12 gap-8 md:gap-14">
           <ScrollReveal className="md:col-span-7">
-            <p className="text-lg md:text-xl text-text-primary leading-relaxed mb-5">
-              Peste 10 ani de experiență în pregătirea mașinilor pentru
-              drumurile care nu apar pe hartă. Lucrăm de la consultanță până la
-              implementare — și rămânem în contact mult timp după ce mașina iese
-              din service.
-            </p>
-            <p className="text-base md:text-lg text-text-muted leading-relaxed">
+            <p className="text-lg md:text-xl text-text-primary leading-relaxed">
               Ne ocupăm de fiecare piesă: suspensie, protecții, bagajeri,
               snorkel, sertare custom, sisteme de iluminat și tot ce ține de
               transformarea unui vehicul de serie într-o mașină reală de
@@ -50,7 +54,7 @@ export default function OverlandingPage() {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1} className="md:col-span-5">
-            <div className="border border-border-dark/15 p-6 bg-bg-secondary">
+            <div className="border border-accent-primary/40 border-l-4 border-l-accent-primary p-6 bg-bg-secondary">
               <p className="font-accent text-2xl text-accent-primary mb-4">
                 — ce ne distinge
               </p>
@@ -63,7 +67,6 @@ export default function OverlandingPage() {
                   <span className="font-heading text-accent-primary">/</span>
                   Atenție la detaliu pe fiecare îmbinare.
                 </li>
-
                 <li className="flex gap-3">
                   <span className="font-heading text-accent-primary">/</span>
                   Ne alegem proiectele cu grijă.
@@ -71,6 +74,25 @@ export default function OverlandingPage() {
               </ul>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Full-width gallery — visual anchor of the flagship page */}
+      <section className="bg-bg-secondary border-y border-border-dark/10 py-12 md:py-20">
+        <div className="container-x mb-8 md:mb-10">
+          <p className="font-accent text-xl text-accent-primary mb-2">
+            — galerie proiecte
+          </p>
+          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl tracking-wider max-w-4xl">
+            Builds overlanding & off-road
+          </h2>
+          <p className="mt-4 md:mt-6 text-base md:text-lg text-text-muted max-w-2xl leading-relaxed">
+            Imagini din atelier și de pe teren — modificări reale, testate pe
+            drumuri grele.
+          </p>
+        </div>
+        <div className="container-x">
+          <OverlandingGalleryCarousel />
         </div>
       </section>
 

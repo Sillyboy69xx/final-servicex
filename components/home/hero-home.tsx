@@ -297,7 +297,6 @@ export function HeroHome() {
               style={{ backgroundColor: BRAND_RED }}
             />
           </span>
-          <span>Live · București</span>
         </div>
         <span ref={coordsRef} className="hidden sm:inline">
           44.4267°N · 26.1025°E
@@ -834,7 +833,7 @@ export function HeroHome() {
               className="font-mono text-[10px] md:text-xs tracking-[0.3em] mb-4 md:mb-6 uppercase"
               style={{ color: BRAND_RED }}
             >
-              [ Nº 01 ] — Service Overlanding
+              Service Overlanding
             </p>
             <h1
               ref={headlineRef}

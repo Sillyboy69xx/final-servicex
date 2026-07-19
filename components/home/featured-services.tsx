@@ -34,7 +34,6 @@ export function FeaturedServices() {
       </div>
 
       <div className="md:hidden flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory -mx-5 px-5 pb-4">
-        <FlagshipCard service={flagship} />
         {rest.map((s) => (
           <ServiceCardMobile key={s.slug} service={s} />
         ))}
@@ -56,9 +55,6 @@ export function FeaturedServices() {
             />
           </div>
           <div className="relative z-10 flex justify-between">
-            <span className="font-accent text-lg text-accent-primary bg-bg-primary px-3 py-1">
-              flagship
-            </span>
             <ArrowUpRight className="w-7 h-7 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform bg-bg-primary p-1" />
           </div>
           <div className="relative z-10 bg-bg-primary p-5 -m-2">

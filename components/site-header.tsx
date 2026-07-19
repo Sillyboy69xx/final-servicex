@@ -192,9 +192,15 @@ export function SiteHeader() {
                 className="flex items-center gap-2.5"
                 tabIndex={open ? 0 : -1}
               >
-                <div className="w-8 h-8 border border-border-dark/40 flex items-center justify-center bg-bg-secondary">
-                  <Image src="/logo.svg" alt="" width={26} height={26} aria-hidden />
-                </div>
+                {/* Drawer logo — border-free, sized to fit h-16 header row */}
+                <Image
+                  src="/new_logo.png"
+                  alt=""
+                  width={462}
+                  height={336}
+                  aria-hidden
+                  className="h-9 w-auto"
+                />
                 <span className="font-heading text-lg tracking-widest">{siteConfig.name}</span>
               </Link>
 
@@ -307,11 +313,17 @@ export function SiteHeader() {
     <>
       <header className="sticky top-0 z-50 bg-bg-primary/90 backdrop-blur-sm border-b border-border-dark/15">
         <div className="container-x flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* Logo — new_logo.png at call-button height on mobile, no border box */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-9 h-9 md:w-10 md:h-10 border border-border-dark/40 flex items-center justify-center bg-bg-secondary">
-              <Image src="/logo.svg" alt="" width={32} height={32} aria-hidden />
-            </div>
+            <Image
+              src="/new_logo.png"
+              alt=""
+              width={462}
+              height={336}
+              priority
+              aria-hidden
+              className="h-11 w-auto md:h-12"
+            />
             <span className="font-heading text-xl md:text-2xl tracking-widest">
               {siteConfig.name}
             </span>
