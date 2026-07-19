@@ -58,8 +58,11 @@ export const sablareServiceImages = {
   antifonare: publicImage("sablare72.jpeg"),
 } as const;
 
+/** Extra image keys for service pages not yet listed in the nav `services` array */
+type OrphanServiceSlug = "revizii-mentenanta";
+
 /** Hero image per service page */
-export const serviceHeroImages: Record<ServiceSlug, string> = {
+export const serviceHeroImages: Record<ServiceSlug | OrphanServiceSlug, string> = {
   "overlanding-offroad": images.overlanding[0],
   "detailing-spalare": publicImage("detailing-3-after.jpeg"),
   "sablare-antifonare": sablareServiceImages.sablare,
@@ -68,12 +71,13 @@ export const serviceHeroImages: Record<ServiceSlug, string> = {
 
   "diagnoza-multi-marca": publicImage("diagnoza-auto.webp"),
   "reparatii-esapament": publicImage("esapament.webp"),
+  mecanica: publicImage("24.jpeg"),
 
   consultanta: publicImage("17.jpeg"),
 };
 
 /** Thumbnail for cards on /servicii and featured services */
-export const serviceCardImages: Record<ServiceSlug, string> = {
+export const serviceCardImages: Record<ServiceSlug | OrphanServiceSlug, string> = {
   "overlanding-offroad": images.overlanding[0],
   "detailing-spalare": publicImage("detailing-3-after.jpeg"),
   "revizii-mentenanta": publicImage("2.jpeg"),
@@ -81,12 +85,15 @@ export const serviceCardImages: Record<ServiceSlug, string> = {
   "aer-conditionat": publicImage("incarcare_freon.jpg"),
   "diagnoza-multi-marca": publicImage("diagnoza-auto.webp"),
   "reparatii-esapament": publicImage("14.jpeg"),
+  mecanica: publicImage("24.jpeg"),
 
   consultanta: publicImage("19.jpeg"),
 };
 
 /** Horizontal photo strips on service detail pages */
-export const servicePhotoStrips: Partial<Record<ServiceSlug, string[]>> = {
+export const servicePhotoStrips: Partial<
+  Record<ServiceSlug | OrphanServiceSlug, string[]>
+> = {
   "revizii-mentenanta": [
     publicImage("1.jpeg"),
     publicImage("2.jpeg"),

@@ -41,6 +41,11 @@ export const services = [
     short: "Tobe, racorduri, catalizatoare.",
   },
   {
+    slug: "mecanica",
+    title: "Mecanică",
+    short: "Reparații mecanice generale — motor, transmisie, frâne și direcție.",
+  },
+  {
     slug: "consultanta",
     title: "Consultanță",
     short: "Cumpărare vehicul, overlanding, implementare modificări.",
