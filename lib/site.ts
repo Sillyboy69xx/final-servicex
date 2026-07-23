@@ -6,7 +6,7 @@ export const siteConfig = {
   phoneRaw: "+40722502035",
   // Primary contact email shown in footer, contact strip, and mobile drawer
   email: "Proservinnovation@gmail.com",
-  address: "București",
+  address: "Şoseaua Olteniţei 185, 077160 Popești-Leordeni",
   hours: "Luni — Vineri: 08:30 — 18:00",
 };
 
@@ -35,7 +35,7 @@ export const services = [
   },
   {
     slug: "sablare-antifonare",
-    title: "Sablare & Antifonare",
+    title: "Sablare, Antifonare, Diagnoză Multi-Marcă, Mecanică & Electrica",
     short: "Sablare eșapament, antifonare și pregătire pentru vopsire.",
   },
   {
