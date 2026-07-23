@@ -13,7 +13,7 @@ const items = [
   },
   {
     title: "Reparații tobe eșapament",
-    text: "Recondiționare tobe — înlocuire pereți interiori, sudură fisuri, înlocuire părți rugi.",
+    text: "Recondiționare tobe — înlocuire pereți interiori, sudură fisuri, înlocuire părți rugină.",
   },
   {
     title: "Înlocuire tobe eșapament",

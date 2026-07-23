@@ -1,51 +1,51 @@
-'use client'
+"use client";
 
-import { useEffect, useRef } from 'react'
-import { gsap, ScrollTrigger, registerGsap } from '@/lib/gsap'
+import { useEffect, useRef } from "react";
+import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap";
 
 const steps = [
   {
-    title: 'Consultanță',
-    text: 'Discutăm despre mașină, despre rutele care îți plac, despre bagajul real și cum vrei să folosești vehiculul. Setăm așteptările corect.',
+    title: "Consultanță",
+    text: "Discutăm despre mașină, despre rutele care îți plac, despre bagajul real și cum vrei să folosești vehiculul. Setăm așteptările corect.",
   },
   {
-    title: 'Plan',
-    text: 'Construim un plan etapizat: ce schimbăm acum, ce lăsăm pentru a doua iterație. Fiecare modificare are un motiv clar.',
+    title: "Plan",
+    text: "Construim un plan etapizat: ce schimbăm acum, ce lăsăm pentru a doua iterație. Fiecare modificare are un motiv clar.",
   },
   {
-    title: 'Implementare',
-    text: 'Lucrăm pas cu pas. Suspensie, protecții, bagajeri, sertare, electric. Fără grabă, cu reglaj real al fiecărei piese.',
+    title: "Implementare",
+    text: "Lucrăm pas cu pas. Suspensie, protecții, sertare. Fără grabă, cu reglaj real al fiecărei piese.",
   },
   {
-    title: 'Predare',
-    text: 'Mașina iese pregătită, testată și documentată. Rămânem în contact pentru ajustări — fiecare proiect este personal.',
+    title: "Predare",
+    text: "Mașina iese pregătită, testată și documentată. Rămânem în contact pentru ajustări — fiecare proiect este personal.",
   },
-]
+];
 
 export function ProcessSection() {
-  const lineRef = useRef<SVGLineElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const lineRef = useRef<SVGLineElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    registerGsap()
-    const line = lineRef.current
-    const container = containerRef.current
-    if (!line || !container) return
+    registerGsap();
+    const line = lineRef.current;
+    const container = containerRef.current;
+    if (!line || !container) return;
     const ctx = gsap.context(() => {
-      const length = line.getTotalLength?.() ?? 1000
-      gsap.set(line, { strokeDasharray: length, strokeDashoffset: length })
+      const length = line.getTotalLength?.() ?? 1000;
+      gsap.set(line, { strokeDasharray: length, strokeDashoffset: length });
       gsap.to(line, {
         strokeDashoffset: 0,
-        ease: 'none',
+        ease: "none",
         scrollTrigger: {
           trigger: container,
-          start: 'top 70%',
-          end: 'bottom 80%',
+          start: "top 70%",
+          end: "bottom 80%",
           scrub: 0.6,
         },
-      })
+      });
 
-      gsap.utils.toArray<HTMLElement>('[data-step]').forEach((step) => {
+      gsap.utils.toArray<HTMLElement>("[data-step]").forEach((step) => {
         gsap.fromTo(
           step,
           { x: -30, opacity: 0 },
@@ -53,14 +53,14 @@ export function ProcessSection() {
             x: 0,
             opacity: 1,
             duration: 0.7,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: step, start: 'top 80%' },
+            ease: "power3.out",
+            scrollTrigger: { trigger: step, start: "top 80%" },
           },
-        )
-      })
-    })
-    return () => ctx.revert()
-  }, [])
+        );
+      });
+    });
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section className="container-x py-16 md:py-28">
@@ -69,7 +69,10 @@ export function ProcessSection() {
         Cum lucrăm
       </h2>
 
-      <div ref={containerRef} className="relative grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr] gap-x-5 md:gap-x-10">
+      <div
+        ref={containerRef}
+        className="relative grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr] gap-x-5 md:gap-x-10"
+      >
         <svg
           className="absolute left-3 md:left-5 top-3 bottom-3 h-[calc(100%-1.5rem)] w-1 pointer-events-none"
           preserveAspectRatio="none"
@@ -107,11 +110,13 @@ export function ProcessSection() {
               <h3 className="font-heading text-3xl md:text-5xl tracking-wider mb-3">
                 {step.title}
               </h3>
-              <p className="text-text-muted leading-relaxed max-w-xl">{step.text}</p>
+              <p className="text-text-muted leading-relaxed max-w-xl">
+                {step.text}
+              </p>
             </div>
           </div>
         ))}
       </div>
     </section>
-  )
+  );
 }

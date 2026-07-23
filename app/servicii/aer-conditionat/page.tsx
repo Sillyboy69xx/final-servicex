@@ -9,11 +9,15 @@ export const metadata = {
 const items = [
   {
     title: "Încărcare freon",
-    text: "Vidare completă, verificare circuit și încărcare la cantitatea exactă. Diagnoză temperaturi pe ambele părți.",
+    text: "Vidare completă, verificare circuit și încărcare la cantitatea exactă.",
   },
   {
     title: "Verificări pierderi freon",
-    text: "Cu aparat special de detectat gaze.",
+    text: "Cu aparat special de detectare a scurgerilor de freon.",
+  },
+  {
+    title: "Demontare bord & schimb vaporizator",
+    text: "Demontare completă a bordului și înlocuire profesională a vaporizatorului instalației de climatizare.",
   },
 ];
 
@@ -23,7 +27,7 @@ export default function Page() {
       slug="aer-conditionat"
       breadcrumbLabel="Aer Condiționat"
       title={"AER\nCONDIȚIONAT"}
-      intro="Încărcare freon și verificări de pierderi pentru sisteme A/C. Lucrăm cu echipamente profesionale și freon corect calibrat."
+      intro="Încărcare freon și verificări de pierderi pentru sisteme A/C. Lucrăm cu echipamente profesionale."
       subServices={items.map((it) => ({
         title: it.title,
         content: <p className="text-text-muted leading-relaxed">{it.text}</p>,

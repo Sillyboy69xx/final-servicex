@@ -1,8 +1,11 @@
 export const siteConfig = {
   name: "Service Auto",
-  phone: "+40 700 000 000",
-  phoneRaw: "+40700000000",
-
+  // Display phone in international format for header, footer, and CTAs
+  phone: "+40 722 502 035",
+  // Digits-only international form used in tel: hrefs
+  phoneRaw: "+40722502035",
+  // Primary contact email shown in footer, contact strip, and mobile drawer
+  email: "Proservinnovation@gmail.com",
   address: "București",
   hours: "Luni — Vineri: 08:30 — 18:00",
 };
@@ -21,6 +24,16 @@ export const services = [
     short: "Recondiționare interioară, corecție lac, protecție ceramică.",
   },
   {
+    slug: "tapiterie",
+    title: "Tapiterie",
+    short: "Curățare și recondiționare scaune, plafon și covorașe.",
+  },
+  {
+    slug: "polish",
+    title: "Polish",
+    short: "Corecție lac și polish profesional pentru un finisaj impecabil.",
+  },
+  {
     slug: "sablare-antifonare",
     title: "Sablare & Antifonare",
     short: "Sablare eșapament, antifonare și pregătire pentru vopsire.",
@@ -32,7 +45,7 @@ export const services = [
   },
   {
     slug: "diagnoza-multi-marca",
-    title: "Diagnoză Multi-Marcă",
+    title: "Diagnoză Multi-Marcă & Mecanică",
     short: "Echipamente specializate pentru fiecare grup de producători.",
   },
   {
@@ -43,7 +56,8 @@ export const services = [
   {
     slug: "mecanica",
     title: "Mecanică",
-    short: "Reparații mecanice generale — motor, transmisie, frâne și direcție.",
+    short:
+      "Reparații mecanice generale — motor, transmisie, frâne și direcție.",
   },
   {
     slug: "consultanta",

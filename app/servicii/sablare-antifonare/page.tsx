@@ -16,13 +16,14 @@ export const metadata = {
 const serviceCards = [
   {
     src: sablareServiceImages.sablare,
-    caption: "Sablare caroserie, șasiu",
-    alt: "Sablare caroserie și șasiu",
+    caption: "Antifonare",
+    alt: "Antifonare eșapament",
   },
   {
     src: sablareServiceImages.antifonare,
-    caption: "Antifonare",
-    alt: "Antifonare eșapament",
+
+    caption: "Sablare caroserie, șasiu",
+    alt: "Sablare caroserie și șasiu",
   },
 ] as const;
 
@@ -43,16 +44,14 @@ export default function Page() {
           — serviciu
         </p>
         <SplitHeading
-          text={"SABLARE\n& ANTIFONARE"}
+          text={"SABLARE\n& PREGĂTIRE PENTRU VOPSIRE, ANTIFONARE"}
           as="h1"
           className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-wider mb-6 md:mb-8"
         />
 
         {/* Short intro sits directly above the image grid */}
         <p className="max-w-3xl text-base md:text-xl text-text-muted leading-relaxed mb-8 md:mb-10">
-          Sablare, antifonare și pregătire pentru vopsire. Lucrăm pe eșapamente
-          și componente metalice cu atenție la detaliu — fără compromisuri la
-          etanșeitate și finisaj.
+          Sablare, antifonare și pregătire pentru vopsire.
         </p>
 
         {/* Mobile: stacked full-width; md+: equal two-column grid */}

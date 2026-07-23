@@ -50,6 +50,20 @@ export const images = {
       alt: "Detailing — comparație 4",
     },
   ],
+  polishBeforeAfter: [
+    {
+      // Sources inverted so the before shot reads on the left of the slider
+      before: publicImage("polish-1-2.jpeg"),
+      after: publicImage("polish-1-1.jpeg"),
+      alt: "Polish — comparație 1",
+    },
+    {
+      // Sources inverted so the before shot reads on the left of the slider
+      before: publicImage("polish-2-2.jpeg"),
+      after: publicImage("polish-2-1.jpeg"),
+      alt: "Polish — comparație 2",
+    },
+  ],
 } as const;
 
 /** Dual images for the Sablare & Antifonare service page */
@@ -62,12 +76,18 @@ export const sablareServiceImages = {
 type OrphanServiceSlug = "revizii-mentenanta";
 
 /** Hero image per service page */
-export const serviceHeroImages: Record<ServiceSlug | OrphanServiceSlug, string> = {
+export const serviceHeroImages: Record<
+  ServiceSlug | OrphanServiceSlug,
+  string
+> = {
   "overlanding-offroad": images.overlanding[0],
   "detailing-spalare": publicImage("detailing-3-after.jpeg"),
+  // Interior/upholstery shot reused for the dedicated Tapiterie page hero
+  tapiterie: publicImage("detailing-1-after.jpeg"),
+  polish: publicImage("polish-1-1.jpeg"),
   "sablare-antifonare": sablareServiceImages.sablare,
   "revizii-mentenanta": publicImage("1.jpeg"),
-  "aer-conditionat": publicImage("incarcare_freon.jpg"),
+  "aer-conditionat": publicImage("aer-neconditionat.jpeg"),
 
   "diagnoza-multi-marca": publicImage("diagnoza-auto.webp"),
   "reparatii-esapament": publicImage("esapament.webp"),
@@ -77,12 +97,18 @@ export const serviceHeroImages: Record<ServiceSlug | OrphanServiceSlug, string> 
 };
 
 /** Thumbnail for cards on /servicii and featured services */
-export const serviceCardImages: Record<ServiceSlug | OrphanServiceSlug, string> = {
+export const serviceCardImages: Record<
+  ServiceSlug | OrphanServiceSlug,
+  string
+> = {
   "overlanding-offroad": images.overlanding[0],
   "detailing-spalare": publicImage("detailing-3-after.jpeg"),
+  // Second detailing after shot as card thumbnail for Tapiterie
+  tapiterie: publicImage("detailing-2-after.jpeg"),
+  polish: publicImage("polish-1-1.jpeg"),
   "revizii-mentenanta": publicImage("2.jpeg"),
   "sablare-antifonare": images.sablareAntifonare[1],
-  "aer-conditionat": publicImage("incarcare_freon.jpg"),
+  "aer-conditionat": publicImage("aer-neconditionat.jpeg"),
   "diagnoza-multi-marca": publicImage("diagnoza-auto.webp"),
   "reparatii-esapament": publicImage("14.jpeg"),
   mecanica: publicImage("24.jpeg"),
@@ -108,7 +134,7 @@ export const servicePhotoStrips: Partial<
 
   "reparatii-esapament": [publicImage("13.jpeg"), publicImage("14.jpeg")],
   consultanta: [publicImage("17.jpeg"), publicImage("19.jpeg")],
-  "aer-conditionat": [publicImage("incarcare_freon.jpg")],
+  "aer-conditionat": [publicImage("aer-neconditionat.jpeg")],
   "sablare-antifonare": [...images.sablareAntifonare],
   "detailing-spalare": [publicImage("15.jpeg"), publicImage("23.jpeg")],
 };
@@ -125,7 +151,10 @@ const galleryWorkshopItems = Array.from({ length: 24 }, (_, i) => ({
   ratio: (["4/3", "1/1", "3/4"] as const)[i % 3],
 }));
 
-export const galleryItems = [...galleryOverlandingItems, ...galleryWorkshopItems];
+export const galleryItems = [
+  ...galleryOverlandingItems,
+  ...galleryWorkshopItems,
+];
 
 export const overlandingCarouselItems = [
   ...images.overlanding.map((src, i) => ({

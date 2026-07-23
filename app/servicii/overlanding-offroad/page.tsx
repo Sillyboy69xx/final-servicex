@@ -36,8 +36,8 @@ export default function OverlandingPage() {
         />
         <p className="max-w-3xl text-base md:text-xl text-text-muted leading-relaxed">
           Peste 10 ani de experiență în pregătirea mașinilor pentru drumurile
-          care nu apar pe hartă. Lucrăm de la consultanță până la implementare
-          — și rămânem în contact mult timp după ce mașina iese din service.
+          care nu apar pe hartă. Lucrăm de la consultanță până la implementare —
+          și rămânem în contact mult timp după ce mașina iese din service.
         </p>
       </section>
 
@@ -46,11 +46,10 @@ export default function OverlandingPage() {
         <div className="grid md:grid-cols-12 gap-8 md:gap-14">
           <ScrollReveal className="md:col-span-7">
             <p className="text-lg md:text-xl text-text-primary leading-relaxed">
-              Ne ocupăm de fiecare piesă: suspensie, protecții, bagajeri,
-              snorkel, sertare custom, sisteme de iluminat și tot ce ține de
-              transformarea unui vehicul de serie într-o mașină reală de
-              expediție. Fără compromisuri estetice care nu țin la primul drum
-              greu.
+              Ne ocupăm de fiecare piesă: suspensie, protecții, snorkel, sertare
+              custom, sisteme de iluminat și tot ce ține de transformarea unui
+              vehicul de serie într-o mașină reală de expediție. Fără
+              compromisuri estetice care nu țin la primul drum greu.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1} className="md:col-span-5">
@@ -148,7 +147,7 @@ export default function OverlandingPage() {
                   <p>
                     Aici lucrăm la mașină. De la suspensie ridicată și protecții
                     punte, la roof rack-uri, dulapuri sertare aluminiu, snorkel,
-                    iluminat auxiliar și sisteme electrice auxiliare.
+                    iluminat auxiliar.
                   </p>
                   <p>
                     Fabricăm piesele care nu se găsesc — soluții pe care nu le
