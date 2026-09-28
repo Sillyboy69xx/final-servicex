@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
+import Script from 'next/script'
 import { Bebas_Neue, Manrope, Caveat } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -6,6 +8,8 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { PageTransition } from '@/components/page-transition'
 import { CookieConsent } from '@/components/cookie-consent'
+import { GoogleAnalytics } from '@/components/google-analytics'
+import { GA_MEASUREMENT_ID } from '@/lib/google-analytics'
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -43,18 +47,67 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const isProduction = process.env.NODE_ENV === 'production'
+
   return (
     <html
       lang="ro"
       className={`${bebas.variable} ${manrope.variable} ${caveat.variable} bg-bg-primary`}
     >
       <body className="bg-bg-primary text-text-primary font-sans antialiased">
+        {/* Consent Mode defaults must run before gtag.js loads */}
+        {isProduction && (
+          <>
+            <Script
+              id="ga-consent-default"
+              strategy="beforeInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('consent', 'default', {
+                    analytics_storage: 'denied',
+                    ad_storage: 'denied',
+                    ad_user_data: 'denied',
+                    ad_personalization: 'denied',
+                    wait_for_update: 500
+                  });
+                `,
+              }}
+            />
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="ga-config"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_MEASUREMENT_ID}');
+                `,
+              }}
+            />
+          </>
+        )}
+
         <PageTransition />
         <SiteHeader />
         <main className="min-h-screen">{children}</main>
         <SiteFooter />
         <CookieConsent />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {isProduction && (
+          <>
+            {/* Suspense required because GoogleAnalytics reads useSearchParams */}
+            <Suspense fallback={null}>
+              <GoogleAnalytics />
+            </Suspense>
+            <Analytics />
+          </>
+        )}
       </body>
     </html>
   )

@@ -2,16 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import {
+  applyGtagConsent,
+  type ConsentChoice,
+} from "@/lib/google-analytics";
 
 const COOKIE_NAME = "prv_consent_v1";
 const SIX_MONTHS = 60 * 60 * 24 * 180;
-
-type ConsentChoice = {
-  v: 1;
-  analytics: boolean;
-  ads: boolean;
-  personalization: boolean;
-};
 
 declare global {
   interface Window {
@@ -104,6 +101,8 @@ export function CookieConsent() {
 
     if (saved) {
       setChoice(saved);
+      // Restore Consent Mode for returning visitors before they open settings
+      applyGtagConsent(saved);
     } else {
       setVisible(true);
     }
@@ -136,6 +135,9 @@ export function CookieConsent() {
       (window.location.protocol === "https:" ? "; Secure" : "");
 
     removeAccessibleGoogleStorage(finalChoice);
+
+    // Sync Google Consent Mode v2 with the visitor's cookie choices
+    applyGtagConsent(finalChoice);
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
