@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { siteConfig, services } from "@/lib/site";
+import { CookieSettingsButton } from "@/components/cookie-settings-button";
 
 export function SiteFooter() {
   return (
@@ -58,7 +59,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/despre-noi"
-                  className="text-sm text-text-muted hover:text-accent-primary"
+                  className="text-sm text-text-muted hover:text-accent-primary transition-colors"
                 >
                   Despre noi
                 </Link>
@@ -66,7 +67,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/galerie"
-                  className="text-sm text-text-muted hover:text-accent-primary"
+                  className="text-sm text-text-muted hover:text-accent-primary transition-colors"
                 >
                   Galerie build-uri
                 </Link>
@@ -74,12 +75,13 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/servicii"
-                  className="text-sm text-text-muted hover:text-accent-primary"
+                  className="text-sm text-text-muted hover:text-accent-primary transition-colors"
                 >
                   Toate serviciile
                 </Link>
               </li>
             </ul>
+
             <h3 className="font-heading text-xl tracking-widest mb-4">
               Contact
             </h3>
@@ -87,7 +89,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={`tel:${siteConfig.phoneRaw}`}
-                  className="flex items-center gap-2.5 hover:text-accent-primary"
+                  className="flex items-center gap-2.5 hover:text-accent-primary transition-colors"
                 >
                   <Phone className="w-4 h-4" /> {siteConfig.phone}
                 </a>
@@ -95,7 +97,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-2.5 text-text-muted hover:text-accent-primary"
+                  className="flex items-center gap-2.5 text-text-muted hover:text-accent-primary transition-colors"
                 >
                   <Mail className="w-4 h-4" /> {siteConfig.email}
                 </a>
@@ -110,11 +112,31 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-border-dark/15 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-text-muted">
+        <div className="mt-12 pt-6 border-t border-border-dark/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-text-muted">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. Toate drepturile
             rezervate.
           </p>
+
+          <nav
+            aria-label="Documente legale"
+            className="flex flex-wrap items-center gap-x-5 gap-y-2"
+          >
+            <Link
+              href="/politica-de-confindentialitate"
+              className="underline underline-offset-4 hover:text-accent-primary transition-colors"
+            >
+              Confidențialitate
+            </Link>
+            <Link
+              href="/politica-cookies"
+              className="underline underline-offset-4 hover:text-accent-primary transition-colors"
+            >
+              Cookie-uri
+            </Link>
+            <CookieSettingsButton />
+          </nav>
+
           <p className="font-accent text-base">
             o mașină nu se reparӑ — se cunoaște.
           </p>

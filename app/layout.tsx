@@ -5,6 +5,7 @@ import './globals.css'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { PageTransition } from '@/components/page-transition'
+import { CookieConsent } from '@/components/cookie-consent'
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -52,6 +53,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="min-h-screen">{children}</main>
         <SiteFooter />
+        <CookieConsent />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
