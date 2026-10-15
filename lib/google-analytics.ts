@@ -1,6 +1,16 @@
 /** GA4 measurement ID for prvatelierauto.ro — safe to import from server or client */
 export const GA_MEASUREMENT_ID = "G-Y8Y2CWHQCB";
 
+/** Google Ads conversion destination for website call tracking (AW-ID/label) */
+export const GOOGLE_ADS_CALL_CONVERSION_ID =
+  "AW-18376235326/fmfvCLeJnZ4dEL6yvLpE";
+
+/**
+ * Phone number passed to phone_conversion_number — must match the exact
+ * digits/formatting shown on the site so Google can swap in a forwarding number.
+ */
+export const GOOGLE_ADS_PHONE_CONVERSION_NUMBER = "+40 722 502 035";
+
 /** Consent flags stored in the prv_consent_v1 cookie */
 export type ConsentChoice = {
   v: 1;

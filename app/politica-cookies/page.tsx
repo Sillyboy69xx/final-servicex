@@ -25,7 +25,7 @@ export default function PoliticaCookies() {
           </h1>
 
           <p className="text-sm text-black/65">
-            Ultima actualizare: 28 septembrie 2026
+            Ultima actualizare: 16 octombrie 2026
           </p>
 
           <p>
@@ -82,9 +82,9 @@ export default function PoliticaCookies() {
 
           <p>
             Tabelul prezintă cookie-ul folosit pentru alegerea ta și
-            identificatorii obișnuiți ai serviciilor Google configurate prin Tag
-            Manager. Cookie-urile Google apar în funcție de tagurile active,
-            setările acestora și opțiunile tale.
+            identificatorii obișnuiți ai serviciilor Google configurate prin
+            Google tag (gtag.js). Cookie-urile Google apar în funcție de
+            tagurile active, setările acestora și opțiunile tale.
           </p>
 
           <div className="overflow-x-auto">
@@ -166,7 +166,7 @@ export default function PoliticaCookies() {
           </p>
 
           <p>
-            Google Tag Manager, Google Analytics 4 și Google Ads folosesc
+            Google tag (gtag.js), Google Analytics 4 și Google Ads folosesc
             Advanced Consent Mode. Înainte de alegerea ta, categoriile opționale
             au implicit starea „denied”. Dacă le refuzi, tagurile Google nu ar
             trebui să folosească respectivele cookie-uri opționale, însă pot

@@ -9,7 +9,11 @@ import { SiteFooter } from '@/components/site-footer'
 import { PageTransition } from '@/components/page-transition'
 import { CookieConsent } from '@/components/cookie-consent'
 import { GoogleAnalytics } from '@/components/google-analytics'
-import { GA_MEASUREMENT_ID } from '@/lib/google-analytics'
+import {
+  GA_MEASUREMENT_ID,
+  GOOGLE_ADS_CALL_CONVERSION_ID,
+  GOOGLE_ADS_PHONE_CONVERSION_NUMBER,
+} from '@/lib/google-analytics'
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -88,6 +92,10 @@ export default function RootLayout({
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
                   gtag('config', '${GA_MEASUREMENT_ID}');
+                  // Website call conversion — replaces matching displayed numbers with a Google forwarding number for ad visitors
+                  gtag('config', '${GOOGLE_ADS_CALL_CONVERSION_ID}', {
+                    'phone_conversion_number': '${GOOGLE_ADS_PHONE_CONVERSION_NUMBER}'
+                  });
                 `,
               }}
             />
